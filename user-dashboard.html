@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+        rel="stylesheet"
+        as="style"
+        onload="this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+    <title>GreenPoints Kerala - User Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="./assets/GreenPoints.png" />
+    <link rel="stylesheet" href="./dist/styles.css">
+</head>
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#a8ff78] group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7f3ec] px-10 py-3">
+                <div class="flex items-center gap-4 text-[#0e1b13]">
+                    <img src="./assets/GreenPoints.png" alt="GreenPoints Kerala Logo" class="size-8" />
+                    <h2 class="text-[#0e1b13] text-lg font-bold leading-tight tracking-[-0.015em]">GreenPoints Kerala</h2>
+                </div>
+                <div class="flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <div class="relative" id="userDropdown">
+                            <div class="flex items-center gap-3 cursor-pointer" id="userDropdownToggle">
+                                <div class="w-10 h-10 rounded-full bg-[#19e66e] flex items-center justify-center text-[#0e1b13] font-bold text-lg" id="userInitials">U</div>
+                                <div class="flex flex-col">
+                                    <span id="userName" class="text-[#4e976d] text-sm font-medium">Loading...</span>
+                                    <span id="userEmail" class="text-[#4e976d] text-xs">Loading...</span>
+                                </div>
+                            </div>
+                            <div id="userDropdownMenu" class="absolute right-0 top-full mt-2 w-64 bg-white rounded-xl shadow-lg border border-[#d0e7d9] hidden transition-all duration-200 ease-in-out z-10">
+                                <div class="p-4">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div class="w-12 h-12 rounded-full bg-[#19e66e] flex items-center justify-center text-[#0e1b13] font-bold text-xl" id="userInitialsLarge">U</div>
+                                        <div class="flex flex-col">
+                                            <span id="userNameLarge" class="text-[#0e1b13] font-bold">Loading...</span>
+                                            <span id="userEmailLarge" class="text-[#4e976d] text-sm">Loading...</span>
+                                        </div>
+                                    </div>
+                                    <div class="pt-3 border-t border-[#d0e7d9]">
+                                        <a href="edit-profile.html" class="block text-[#4e976d] text-sm mb-2 hover:text-[#19e66e] transition-colors duration-200">Edit Profile</a>
+                                        <div class="text-[#4e976d] text-sm mb-2">Total GreenPoints: <span id="totalPoints">0</span></div>
+                                        <div class="text-[#4e976d] text-sm">Member since: <span id="memberSince">Loading...</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="logoutBtn" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#19e66e] text-[#0e1b13] text-sm font-bold leading-normal tracking-[0.015em]">
+                        <span class="truncate">Log out</span>
+                    </button>
+                </div>
+            </header>
+            <div class="px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <div class="flex flex-wrap justify-between gap-3 p-4">
+                        <p class="text-[#0e1b13] tracking-light text-[32px] font-bold leading-tight min-w-72">Your dashboard</p>
+                    </div>
+                    <h3 class="text-[#0e1b13] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">View Report</h3>
+                    <div class="p-4 @container">
+                        <div class="flex flex-1 flex-col items-start justify-between gap-4 rounded-xl border border-[#d0e7d9] bg-[#f8fcfa] p-5 @[480px]:flex-row @[480px]:items-center">
+                            <p class="text-[#0e1b13] text-base font-bold leading-tight">You've earned <span id="pointsEarned">0</span> GreenPoints this week!</p>
+                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#19e66e] text-[#0e1b13] text-sm font-medium leading-normal hover:bg-[#0eda5f] transition-colors duration-200">
+                                <span class="truncate">View reports</span>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="text-[#0e1b13] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Leaderboard Status</h3>
+                    <div class="flex items-center gap-4 bg-[#f8fcfa] px-4 min-h-[72px] py-2">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 bg-[#2ecc71] flex items-center justify-center">
+                            <svg class="size-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 15L8.5 8L15.5 8L12 15Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-[#0e1b13] text-base font-medium leading-normal line-clamp-1">Overall Ranking</p>
+                            <p class="text-[#4e976d] text-sm font-normal leading-normal line-clamp-2">You're in the top 20% of contributors</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-[#f8fcfa] px-4 min-h-[72px] py-2">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 bg-[#2ecc71] flex items-center justify-center">
+                            <svg class="size-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 8L15.5 15H8.5L12 8Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-[#0e1b13] text-base font-medium leading-normal line-clamp-1">Weekly Progress</p>
+                            <p class="text-[#4e976d] text-sm font-normal leading-normal line-clamp-2">Your contributions are up by 15% this week</p>
+                        </div>
+                    </div>
+                    <h3 class="text-[#0e1b13] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Withdraw GreenPoints</h3>
+                    <div class="flex items-center gap-4 bg-[#f8fcfa] px-4 min-h-[72px] py-2">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 bg-[#2ecc71] flex items-center justify-center">
+                            <svg class="size-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-[#0e1b13] text-base font-medium leading-normal line-clamp-1">Available for Withdrawal</p>
+                            <p class="text-[#4e976d] text-sm font-normal leading-normal line-clamp-2">You have <span id="availablePoints">0</span> GreenPoints available to withdraw</p>
+                        </div>
+                        <div class="ml-auto">
+                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#19e66e] text-[#0e1b13] text-sm font-medium leading-normal hover:bg-[#0eda5f] transition-colors duration-200">
+                                <span class="truncate">Withdraw</span>
+                            </button>
+                        </div>
+
+                        </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="user-dashboard.js"></script>
+</body>
+</html>

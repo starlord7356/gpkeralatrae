@@ -1,0 +1,120 @@
+.dashboard-container {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--light-bg);
+    color: var(--dark-text);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: white;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dashboard-header .logo-image {
+    width: 50px;
+    height: auto;
+}
+
+.dashboard-header h2 {
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 0 10px #2ecc71;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#centerName {
+    font-size: 18px;
+    color: #2ecc71;
+    text-shadow: 0 0 5px #2ecc71;
+}
+
+.logout-button {
+    padding: 8px 20px;
+    background: transparent;
+    border: 2px solid #2ecc71;
+    border-radius: 20px;
+    color: #2ecc71;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #2ecc71;
+    box-shadow: 0 0 10px #2ecc71;
+}
+
+.logout-button:hover {
+    background: #2ecc71;
+    color: #0c1022;
+    box-shadow: 0 0 20px #2ecc71;
+}
+
+.dashboard-content {
+    padding: 40px;
+}
+
+.welcome-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.welcome-card h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #2ecc71;
+    text-shadow: 0 0 10px #2ecc71;
+}
+
+.welcome-card p {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.6;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 25px #2ecc71;
+    }
+    to {
+        box-shadow: 0 0 35px #2ecc71;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .dashboard-header .logo {
+        flex-direction: column;
+    }
+
+    .user-info {
+        flex-direction: column;
+    }
+
+    .dashboard-content {
+        padding: 20px;
+    }
+}
